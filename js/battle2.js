@@ -206,5 +206,17 @@ function handleKeyPress(e){
 
 window.onload = init;
 
+var yElems = ['A','B','C','D','E','F','G'];
 
+for (var x = 0; x <= 6; x++) {
+  for (var y = 0; y <= 6; y++) {
+    var char = yElems[y];
 
+    ((_char = char, _y = y, _x = x) => {
+      document.getElementById(`${_y}${_x}`).addEventListener('click', () => {
+        document.getElementById('guessInput').value = `${_char}${_x}`;
+        document.getElementById('fireButton').click();
+      });
+    })();
+  }
+}
